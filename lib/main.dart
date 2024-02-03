@@ -3,8 +3,7 @@ import 'package:influxdevcoursepractice/home.dart';
 
 /**
  * class practice assignment
- * class 4
- * class 5
+ * class 6
  **/
 
 void main() {
