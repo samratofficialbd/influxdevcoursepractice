@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:influxdevcoursepractice/home.dart';
 
-
-  /**
+/**
  * class practice assignment
  * class 4
  * class 5
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'Influx Dev',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
         useMaterial3: true,
       ),
       home: Homepage(),

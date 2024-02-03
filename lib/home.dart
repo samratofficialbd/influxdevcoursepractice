@@ -1,60 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:influxdevcoursepractice/page_five.dart';
-import 'package:influxdevcoursepractice/page_four.dart';
-import 'package:influxdevcoursepractice/page_one.dart';
-import 'package:influxdevcoursepractice/page_three.dart';
-import 'package:influxdevcoursepractice/page_two.dart';
 
-class Homepage extends StatelessWidget {
+import 'app_drawer.dart';
+
+class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
   @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  final _drawerKey = GlobalKey<ScaffoldState>();
+
+  @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 5,
+    return  SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 0,
-          bottom: TabBar(
-            tabs: [
-              Tab(
-                text: 'One',
-              ),
-              Tab(
-                text: 'Two',
-              ),
-              Tab(
-                text: 'Three',
-              ),
-              Tab(
-                text: 'Four',
-              ),
-              Tab(
-                text: 'Five',
-              ),
-            ],
-          ),
-        ),
-        body: TabBarView(children: [
-          PageOne(),
-          PageTwo(),
-          PageThree(),
-          PageFour(),
-          PageFive()
-        ]),
-        bottomNavigationBar: BottomNavigationBar(
-          items: [
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.star,
-                ),
-                label: 'Page 1'),
-            BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Page 2'),
-            BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Page 3'),
-            BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Page 4'),
-            BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Page 5'),
-          ],
-        ),
+        key: _drawerKey,
+        appBar: AppBar(),
+        drawer: AppDrawer(),
       ),
     );
   }
