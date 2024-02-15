@@ -3,7 +3,7 @@ import 'package:influxdevcoursepractice/home.dart';
 
 /**
  * class practice assignment
- * class 6
+ * class 8
  **/
 
 void main() {
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Influx Dev',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
       home: Homepage(),
