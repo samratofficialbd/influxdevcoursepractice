@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:influxdevcoursepractice/home.dart';
+import 'package:influxdevcoursepractice/home_page.dart';
 
 /**
  * class practice assignment
