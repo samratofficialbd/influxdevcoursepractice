@@ -1,71 +1,85 @@
 import 'package:flutter/material.dart';
-import 'package:influxdevcoursepractice/contact_page.dart';
-import 'package:influxdevcoursepractice/gird_page.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gap/gap.dart';
 
-class Homepage extends StatefulWidget {
+class Homepage extends StatelessWidget {
   const Homepage({super.key});
 
   @override
-  State<Homepage> createState() => _HomepageState();
-}
-
-class _HomepageState extends State<Homepage> {
-  @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ContactPage(),
-                      ));
-                },
-                child: Container(
-                  height: 100,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.amber,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Contact List',
-                    style: TextStyle(fontSize: 22, color: Colors.white),
-                  ),
-                ),
+    return Scaffold(
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Container(
+              height: .3.sh,
+              decoration: BoxDecoration(
+                color: Color(0xFFF3F5F7),
               ),
-              SizedBox(height: 20,),
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => GridPage(),
-                      ));
-                },
-                child: Container(
-                  height: 100,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.purple,
-                    borderRadius: BorderRadius.circular(10),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 24.h,
                   ),
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Number Grid',
-                    style: TextStyle(fontSize: 22, color: Colors.white),
-                  ),
-                ),
-              )
-            ],
-          ),
+                  SizedBox(
+                    height: 44.h,
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 22.r,
+                          backgroundColor: Color(0xFFDEDEE8),
+                        ),
+                        Gap(11.w),
+                        Expanded(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Good Morning',
+                                style: TextStyle(
+                                    fontSize: 12.sp, color: Color(0xFF979899)),
+                              ),
+                              Text(
+                                'Amelia Barlow',
+                                style: TextStyle(
+                                    fontSize: 16.sp, color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Row(
+                            children: [
+                              SvgPicture.asset(
+                                'assets/svg/location.svg',
+                                height: 18.h,
+                                width: 15.w,
+                              ),
+                              Text(
+                                'My Flat',
+                                style: TextStyle(
+                                  fontSize: 12.sp,
+                                ),
+                              ),
+                              const Icon(
+                                Icons.keyboard_arrow_down,
+                                color: Color(0xFF979899),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

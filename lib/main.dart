@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:influxdevcoursepractice/color.dart';
 import 'package:influxdevcoursepractice/home_page.dart';
 
 /**
  * class practice assignment
- * class 8
+ * class 12
  **/
 
 void main() {
@@ -16,14 +19,24 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Influx Dev',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
-        useMaterial3: true,
+    return ScreenUtilInit(
+      designSize: const Size(390, 844),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) => MaterialApp(
+        title: 'Influx Dev',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: kColorPrimary),
+          useMaterial3: true,
+          textTheme: Typography.englishLike2018.apply(
+              fontSizeFactor: 1.sp,
+              bodyColor: Colors.black,
+              fontFamily: GoogleFonts.dmSans().fontFamily),
+        ),
+        home: child,
       ),
-      home: Homepage(),
+      child: const Homepage(),
     );
   }
 }
